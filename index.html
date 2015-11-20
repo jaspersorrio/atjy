@@ -122,7 +122,7 @@
 			margin-bottom: 20px; 
 		}
 
-		.scholarship-card{
+		.expand-card{
 			cursor: pointer;
 			-webkit-transform: scale(0.9);
 			-moz-transform: scale(0.9);
@@ -136,7 +136,11 @@
 			        transition: all .25s ease-in;
 		}
 
-		.scholarship-card:hover{
+		[ng-click]{
+			outline: none;
+		}
+
+		.expand-card:hover{
 			-webkit-transform: scale(1);
 			   -moz-transform: scale(1);
 			    -ms-transform: scale(1);
@@ -262,7 +266,7 @@
 					</div>
 				</div> -->
 				<div>
-					<md-card flex-offset="25" flex="50" flex-offset="30" flex="40" class="scholarship-card" ng-click="openDialog($event)">
+					<md-card flex-offset="25" flex="50" flex-offset="30" flex="40" class="expand-card" ng-click="openDialog($event, stories.scholarship)">
 						<md-card-content centered>
 							<img class="md-card-image scholarship-pic" src="images/Scholarship-2015-2.jpg">
 							<h3>Ngee Ann Polytechnic Scholarship for Academic Year 14/15 & 15/16</h3>
@@ -277,18 +281,22 @@
 					<span class="line-art"></span>
 				</div>
 
-				<div layout="row" layout-align="space-around center" flex-offset="10" flex="80" class="volunteering">
-					<div flex>
-						<img class="md-whiteframe-2dp" src="images/ahuva.jpg">	
+				<div layout="row" centered layout-align="space-around center" flex-offset="10" flex="80" class="volunteering">
+					<div flex ng-click="openDialog($event, stories.ahuva)">
+						<img class="md-whiteframe-2dp expand-card" src="images/ahuva.jpg">
+						<h3>Ahuva</h3>
 					</div>
-					<div flex>
-						<img class="md-whiteframe-2dp" src="images/nyc.jpg">	
+					<div flex ng-click="openDialog($event, stories.nyc)">
+						<img class="md-whiteframe-2dp expand-card" src="images/nyc.jpg">	
+						<h3>NYC</h3>
 					</div>
-					<div flex>
-						<img class="md-whiteframe-2dp" src="images/runforfood.jpg">	
+					<div flex ng-click="openDialog($event, stories.runForFood)">
+						<img class="md-whiteframe-2dp expand-card" src="images/runforfood.jpg">	
+						<h3>Run for food</h3>
 					</div>
-					<div flex>
-						<img class="md-whiteframe-2dp" src="images/stagTuition.jpg">	
+					<div flex ng-click="openDialog($event, stories.stag)">
+						<img class="md-whiteframe-2dp expand-card" src="images/stagTuition.jpg">	
+						<h3>Stagmatch</h3>
 					</div>
 				</div>
 
