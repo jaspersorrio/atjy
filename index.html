@@ -65,7 +65,8 @@
 		}
 
 		.landing-msg{
-			font-size: 40px;
+			margin-top:15%;
+			font-size: 35px;
 		}
 
 		.clickable{
@@ -95,6 +96,10 @@
 			background-image: url('/images/landingbg.jpg');
 		}
 
+		.landing-msg{
+			text-shadow: 0 0 1px #fff,0 1px 2px rgba(0,0,0,0.45);
+		}
+
 		#about{
 			margin-top:100px;
 		}
@@ -103,6 +108,59 @@
 			text-align: center;
 		}
 
+		.line-art{
+			width: 120px;
+			background-color: black;
+			height: 3px;
+			margin: 0px 10px;
+		}
+
+		.portrait{
+			width: 100%;
+			border: 20px solid white;
+			border-bottom: 100px solid white;
+			margin-bottom: 20px; 
+		}
+
+		.scholarship-card{
+			cursor: pointer;
+			-webkit-transform: scale(0.9);
+			-moz-transform: scale(0.9);
+			-ms-transform: scale(0.9);
+			-o-transform: scale(0.9);
+			transform: scale(0.9);
+			-webkit-transition: all .25s ease-in;
+			   -moz-transition: all .25s ease-in;
+			    -ms-transition: all .25s ease-in;
+			     -o-transition: all .25s ease-in;
+			        transition: all .25s ease-in;
+		}
+
+		.scholarship-card:hover{
+			-webkit-transform: scale(1);
+			   -moz-transform: scale(1);
+			    -ms-transform: scale(1);
+			     -o-transform: scale(1);
+			        transform: scale(1);
+		}
+
+		.scholarship-pic{
+			width: 100%;
+		}
+
+		.who-am-i{
+			margin-top: 50px;
+		}
+
+		.volunteering div {
+			padding: 20px;
+		}
+
+		.volunteering div img{
+			max-width: 100%;
+			min-width: 100%;
+			border-radius: 50%;
+		}
 	</style>
 </head>
 <body ng-app="atjy" ng-controller="indexCtrl">
@@ -132,7 +190,7 @@
 			<div layout="column" class="full-page" flex layout-align="center center">
 				<div class="full-width" layout="row">
 					<div class="landing-msg" centered flex-offset="10" flex="50">
-						"Faith can bring you to places you never thought you could reach"
+						" I aspire to help kids break out of the poverty cycle by providing them with an opportunity to study."
 					</div>	
 				</div>
 				
@@ -141,37 +199,103 @@
 
 		<div in-view="$inview&&checkState('about', $inviewpart)" scroll-position  id="about" class="page-container">
 			<div class="page" >
-				<div layout="row" layout-align="center center">
-					<h1>About</h1>
-				</div>
-				<div layout="row" layout-align="center center">
+				<div layout="row" class="who-am-i" layout-align="center center">
+					<span class="line-art"></span>
 					<h2>WHO AM I?</h2>
+					<span class="line-art"></span>
 				</div>
-				<div centered flex-offset="10" flex="80" layout="column" layout-align="center center">
-					<p>I am Amanda Tan, an eighteen-year-old girl. </p>
-					<p>Being able to bless others has always been a joy to me. I am someone that enjoys the presence of people around me and loves interacting with others.</p>
-					<p>At the same time, I am also a very driven person. I will work towards whatever goals that I set out to accomplish. </p>
-					<p>However, no matter how far I go in life, humility will always be a value that I hold closely to my heart because I believe that everyone that we meet has something valuable to teach us. </p>
-					<p>Much more than that, it is also because of my faith. I believe that I am able to stand where I am today is not because of my own abilities, but because of God’s unending grace and love towards me. </p>
-					<p>I am currently enrolled in Ngee Ann Polytechnic, Diploma in Business & Social Enterprise - a course that allows me to study what I love. </p>
-					<p>Apart from school, I also do volunteer work to give back to the community in my own little ways, which has also developed my ability to communicate with others effectively. </p>
-					<p>I am also currently working on a project where I help companies to design their system manuals, allowing me to hone my I.T. & Design skills - something that is out of my discipline. </p>
-					<p>I aspire to be someone that is able to transform the lives of others because I believe that there is so much more to life than just living for myself!  </p>
+				<div layout="row">
+					<div flex-offset="10" flex="30" layout="column">
+						<img class="portrait md-whiteframe-4dp" src="images/portrait.jpg">
+						<!-- <img class="portrait md-whiteframe-4dp" src="images/portrait.jpg"> -->
+					</div>
+					<div flex-offset="10" flex="40" layout="column" layout-align="start start">
+						<h3>Selfless. Visionary. Driven. Communicative.</h3>
+						<p>I am Amanda Tan, an eighteen-year-old girl.</p>
+						<p>I am currently enrolled in Ngee Ann Polytechnic, Diploma in Business & Social Enterprise - a course that allows me to study what I love.</p>
+
+						<h3>Love Others</h3>
+						<p>Being able to bless others has always been a joy to me. I enjoy the presence of people around me and love interacting with others.</p>
+						
+						<h3>Driven</h3>
+						<p>I am also a very driven person. I believe that nothing is impossible, and I will work towards whatever goals that i set out to accomplish.</p>
+
+						<h3>Everyone has a story</h3>
+						<p>I believe that everyone that we meet has something valuable to teach us. Therefore, no matter how far I go in life, humility will always be a value that I hold closely to my heart.</p>
+
+						<h3>Faith</h3>
+						<p>Much more than that, it is also because of my faith. I believe that I am able to stand where I am today is not because of my own abilities, but because of God’s unending grace and love towards me.</p>
+
+						<h3>Aspirations</h3>
+						<p>I aspire to be someone that is able to transform the lives of others because I believe that there is so much more to life than just living for myself!</p>
+					</div>
 				</div>
+				<!-- <div layout="row">
+					<div flex-offset="5" flex="55" layout="column" layout-align="start start">
+						<h3>Institute</h3>
+						<p>I am currently enrolled in Ngee Ann Polytechnic, Diploma in Business & Social Enterprise - a course that allows me to study what I love.</p>
+
+						<h3>Community work</h3>
+						<p>Apart from school, I also do volunteer work to give back to the community in my own little ways, which has also developed my ability to communicate with others effectively.</p>
+
+						<h3>Working Experience</h3>
+						<p>I am also currently working on a project where I help companies to design their system manuals, allowing me to hone my I.T. & Design skills - something that is out of my discipline.</p>
+
+						<h3>Aspirations</h3>
+						<p>I aspire to be someone that is able to transform the lives of others because I believe that there is so much more to life than just living for myself!</p>
+					</div>
+				</div> -->
 			</div>
 		</div>
 
 		<div in-view="$inview&&checkState('portfolio', $inviewpart)" id="portfolio" scroll-position class="page-container">
-			<div class="full-page">
-				<div>
-					Portfolio
+			<div class="page">
+				<div layout="row" layout-align="center center">
+					<span class="line-art"></span>
+					<h2>AWARDS & ACHIEVEMENTS</h2>
+					<span class="line-art"></span>
 				</div>
-				<div class="quote">
-					“Not all of us can do great things. But we can do small things with great love.” 
--Mother Teresa
-				</div>
+
+				<!-- <div flex-offset="20" flex="60" flex-offset-gt-lg="25" flex-gt-lg="50"  layout="row">
+					<div layout="column">
+						<img class="scholarship-pic md-whiteframe-4dp" src="images/Scholarship-2015-2.jpg">
+					</div>
+				</div> -->
 				<div>
-					---AWARDS & ACHIEVEMENTS---
+					<md-card flex-offset="25" flex="50" flex-offset="30" flex="40" class="scholarship-card" ng-click="openDialog($event)">
+						<md-card-content centered>
+							<img class="md-card-image scholarship-pic" src="images/Scholarship-2015-2.jpg">
+							<h3>Ngee Ann Polytechnic Scholarship for Academic Year 14/15 & 15/16</h3>
+						</md-card-content>
+					</md-card>
+					<!-- <img class="scholarship-pic md-whiteframe-4dp" src="images/Scholarship-2015-2.jpg">	 -->
+				</div>
+
+				<div layout="row" layout-align="center center">
+					<span class="line-art"></span>
+					<h2>VOLUNTEERING EXPERIENCE</h2>
+					<span class="line-art"></span>
+				</div>
+
+				<div layout="row" layout-align="space-around center" flex-offset="10" flex="80" class="volunteering">
+					<div flex>
+						<img class="md-whiteframe-2dp" src="images/ahuva.jpg">	
+					</div>
+					<div flex>
+						<img class="md-whiteframe-2dp" src="images/nyc.jpg">	
+					</div>
+					<div flex>
+						<img class="md-whiteframe-2dp" src="images/runforfood.jpg">	
+					</div>
+					<div flex>
+						<img class="md-whiteframe-2dp" src="images/stagTuition.jpg">	
+					</div>
+				</div>
+
+				<div layout="row" layout-align="center center">
+					<span class="line-art"></span>
+					<h2>WORKING EXPERIENCE</h2>
+					<span class="line-art"></span>
 				</div>
 			</div>
 		</div>

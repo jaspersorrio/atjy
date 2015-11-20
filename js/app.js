@@ -32,14 +32,12 @@ app.controller('indexCtrl', ['$scope', '$mdDialog', '$route','$timeout', '$docum
                         $scope.routeTo(route);
         });
 
-
-
         $scope.routeTo = function(route){
                 var attrs = angular.element(document.getElementById(route))[0].attributes;
                 console.log(route);
                 for(var i = 0; i < attrs.length; i++){
                         if(attrs[i].nodeName == 'scroll-position'){
-                                var pos = Number(attrs[i].nodeValue) - 70;
+                                var pos = Number(attrs[i].nodeValue) - 150;
                                 $document.scrollTop(pos, 300).then(function() {
                                         console && console.log('You just scrolled to the top!');
                                 });
@@ -47,6 +45,17 @@ app.controller('indexCtrl', ['$scope', '$mdDialog', '$route','$timeout', '$docum
                 }
 
                 $scope.state = route;
+        }
+
+        $scope.openDialog = function($event){
+                var parentEl = angular.element(document.body)
+                $mdDialog.show({
+                        clickOutsideToClose: true,
+                        escapeToClose: true,
+                        parent: parentEl,
+                        targetEvent: $event,
+                        templateUrl : "dialog/scholarship.html"
+                })
         }
 
         $scope.aboutDialog = function(about, e){
