@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Amanda Tan Jia Ying</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.css">
+
+	<!-- MD FONTS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	 <!-- Angular Material Dependencies -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-sanitize.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-aria.min.js"></script>
+
+	<!-- scrolling -->
+	<script src="node_modules/angular-scroll/angular-scroll.min.js"></script>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+
+	<!-- Angular Material Javascript now available via Google CDN; version 0.11.2 used here -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.4/angular-material.min.js"></script>
+
+	<script src="node_modules/angular-inview/angular-inview.js"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<style type="text/css">
+
+		.atjy{
+			max-width: 60%;
+			max-height: 100%;
+			margin-top: 40%;
+			border-radius: 50%;
+			background-color: white;
+		}
+
+		md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+			position: fixed;
+			background-color: #fff;
+		}
+
+		md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) .md-button{
+			color:black;
+		}
+
+		a.md-button.md-default-theme:not([disabled]):hover, a.md-button:not([disabled]):hover, .md-button.md-default-theme:not([disabled]):hover, .md-button:not([disabled]):hover{
+			background-color: transparent !important;
+		}
+
+		.primary{
+			color:rgb(255,64,129) !important;
+		}
+
+		.primary-logo{
+			background-color:rgb(255,64,129) !important;
+		}
+
+		.full-width{
+			width: 100%;
+		}
+
+		.landing-msg{
+			font-size: 40px;
+		}
+
+		.clickable{
+			outline: none;
+			cursor:pointer;
+		}
+
+		.page-container{
+			width: 100%;
+			height: 100%;
+			min-height: 100%;
+			margin-top: 64px;
+		}
+
+		.full-page{
+			height: 100vh;
+			/*background-color: blue;*/
+		}
+
+		.landing-image {
+			background-color: transparent;
+			min-height: 100% !important;
+			height: 100% !important;
+			color: rgb(255,255,255);
+			background-size:cover;
+			background-position:50% 50%;
+			background-image: url('/images/landingbg.png');
+		}
+
+		#about{
+			margin-top:100px;
+		}
+
+		[centered]{
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body ng-app="atjy" ng-controller="indexCtrl">
+	<md-toolbar class="md-whiteframe-2dp">
+		<!-- DESKTOP NAV -->
+		<div class="md-toolbar-tools">
+			<md-button md-no-ink flex ng-class="{ primary : state == 'about' }" href="#/about">About</md-button>
+			<md-button md-no-ink flex ng-class="{ primary : state == 'portfolio' }" href="#/portfolio">Portfolio</md-button>
+			<md-button md-no-ink flex href="#/amanda">
+				<!-- <object class="atjy md-whiteframe-1dp" type="image/svg+xml" data="images/atjy.svg">Your browser does not support SVG</object> -->
+				<img ng-class="{ 'primary-logo' : state == 'amanda' }" class="atjy md-whiteframe-2dp" src="images/atjy2.png">
+			</md-button>
+			<md-button  md-no-ink flex ng-class="{ primary : state == 'socialCauses' }" href="#/socialCauses">Social Causes</md-button>
+			<md-button md-no-ink flex ng-class="{ primary : state == 'contact' }" href="#/contact">Contact</md-button>
+
+
+			<!-- <a class="brand-logo" href="#/">amanda</a>
+			<span flex></span>
+			<md-button md-no-ink href="#/events">About</md-button>
+			<md-button md-no-ink href="#/pledge">Skills</md-button>
+			<md-button md-no-ink href="#/team">Social Cause</md-button>
+			<md-button md-no-ink href="#/team">Contact Me</md-button> -->
+		</div>
+	</md-toolbar >
+	<md-content in-view-container>
+		<div in-view="$inview&&checkState('amanda', $inviewpart)" id="amanda" scroll-position class="page-container landing-image">
+			<div layout="column" class="full-page" flex layout-align="center center">
+				<div class="full-width" layout="row">
+					<div class="landing-msg" centered flex-offset="10" flex="50">
+						"Faith can bring you to places you never thought you could reach"
+					</div>	
+				</div>
+				
+			</div>
+		</div>
+
+		<div in-view="$inview&&checkState('about', $inviewpart)" scroll-position  id="about" class="page-container">
+			<div class="page" >
+				<div layout="row" layout-align="center center">
+					<h1>About</h1>
+				</div>
+				<div layout="row" layout-align="center center">
+					<h2>WHO AM I?</h2>
+				</div>
+				<div centered flex-offset="10" flex="80" layout="column" layout-align="center center">
+					<p>I am Amanda Tan, an eighteen-year-old girl. </p>
+					<p>Being able to bless others has always been a joy to me. I am someone that enjoys the presence of people around me and loves interacting with others.</p>
+					<p>At the same time, I am also a very driven person. I will work towards whatever goals that I set out to accomplish. </p>
+					<p>However, no matter how far I go in life, humility will always be a value that I hold closely to my heart because I believe that everyone that we meet has something valuable to teach us. </p>
+					<p>Much more than that, it is also because of my faith. I believe that I am able to stand where I am today is not because of my own abilities, but because of God’s unending grace and love towards me. </p>
+					<p>I am currently enrolled in Ngee Ann Polytechnic, Diploma in Business & Social Enterprise - a course that allows me to study what I love. </p>
+					<p>Apart from school, I also do volunteer work to give back to the community in my own little ways, which has also developed my ability to communicate with others effectively. </p>
+					<p>I am also currently working on a project where I help companies to design their system manuals, allowing me to hone my I.T. & Design skills - something that is out of my discipline. </p>
+					<p>I aspire to be someone that is able to transform the lives of others because I believe that there is so much more to life than just living for myself!  </p>
+				</div>
+			</div>
+		</div>
+
+		<div in-view="$inview&&checkState('portfolio', $inviewpart)" id="portfolio" scroll-position class="page-container">
+			<div class="full-page">
+				<div>
+					Portfolio
+				</div>
+				<div class="quote">
+					“Not all of us can do great things. But we can do small things with great love.” 
+-Mother Teresa
+				</div>
+				<div>
+					---AWARDS & ACHIEVEMENTS---
+				</div>
+			</div>
+		</div>
+
+		<div in-view="$inview&&checkState('socialCauses', $inviewpart)" id="socialCauses" scroll-position class="page-container">
+			<div class="full-page">
+				Social Causes
+			</div>
+		</div>
+
+		<div in-view="$inview&&checkState('contact', $inviewpart)" id="contact" scroll-position class="page-container">
+			<div class="full-page">
+				Contact
+			</div>
+		</div>
+	</md-content>
+	
+</body>
+</html>
