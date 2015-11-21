@@ -138,9 +138,12 @@ app.directive('scrollPosition', [function () {
 }])
 
 app.directive('skrollr', function () {
+
         var obj = {
                 link: function () {
                         /* jshint ignore:start */
+                        console.log(skrollr);
+                        console.log("Done refreshing skrollr");
                         skrollr.init().refresh();
                         /* jshint ignore:end */
                 }
