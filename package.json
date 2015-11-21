@@ -18,7 +18,8 @@
     "grunt-express": "^1.4.1",
     "grunt-open": "^0.2.3",
     "grunt-reload": "^0.2.0",
-    "matchdep": "^0.3.0"
+    "matchdep": "^0.3.0",
+    "skrollr": "^0.6.26"
   },
   "author": "",
   "license": "ISC"

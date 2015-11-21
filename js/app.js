@@ -136,3 +136,14 @@ app.directive('scrollPosition', [function () {
                 }
         };
 }])
+
+app.directive('skrollr', function () {
+        var obj = {
+                link: function () {
+                        /* jshint ignore:start */
+                        skrollr.init().refresh();
+                        /* jshint ignore:end */
+                }
+        };
+        return obj;
+});
