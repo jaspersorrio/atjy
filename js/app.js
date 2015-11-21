@@ -32,12 +32,30 @@ app.controller('indexCtrl', ['$scope', '$mdDialog', '$route','$timeout', '$docum
                         $scope.routeTo(route);
         });
 
+
+
         $scope.routeTo = function(route){
-                var attrs = angular.element(document.getElementById(route))[0].attributes;
+//                 var aboutAttr = angular.element(document.getElementById('about'))[0].attributes
+//                 console.log(angular.element(document.getElementById('about')));
+//                 for(var i = 0; i < aboutAttr.length; i++){
+//                         if(aboutAttr[i].nodeName == 'scroll-position'){
+//                                 var margin = (aboutAttr[i].nodeValue * 0.15);
+//                         }
+//                 }
+
+// offsetHeight
+
+                // scaling doesn't only happen in x position, 
+                // it happens in both x and y position 
+                var elem = angular.element(document.getElementById(route))[0];
+                var attrElem = elem.attributes;
+                var heightElem = elem.offsetHeight;
                 console.log(route);
-                for(var i = 0; i < attrs.length; i++){
-                        if(attrs[i].nodeName == 'scroll-position'){
-                                var pos = Number(attrs[i].nodeValue) - 150;
+                for(var i = 0; i < attrElem.length; i++){
+                        if(attrElem[i].nodeName == 'scroll-position'){
+                                console.log(attrElem[i].nodeValue);
+                                // - (heightElem * 0.15) + 32
+                                var pos = Number(attrElem[i].nodeValue) ;
                                 $document.scrollTop(pos, 300).then(function() {
                                         console && console.log('You just scrolled to the top!');
                                 });

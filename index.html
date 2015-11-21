@@ -78,7 +78,11 @@
 			width: 100%;
 			height: 100%;
 			min-height: 100%;
-			margin-top: 64px;
+			/*margin-top: 64px;*/
+		}
+
+		.page{
+			padding-top: calc(64px + 6%);
 		}
 
 		.full-page{
@@ -98,10 +102,6 @@
 
 		.landing-msg{
 			text-shadow: 0 0 1px #fff,0 1px 2px rgba(0,0,0,0.45);
-		}
-
-		#about{
-			margin-top:100px;
 		}
 
 		[centered]{
@@ -153,7 +153,11 @@
 		}
 
 		.who-am-i{
-			margin-top: 50px;
+			/*margin-top: 50px;*/
+		}
+
+		[margin-top]{
+			margin-top: 56px;
 		}
 
 		.volunteering div {
@@ -190,7 +194,7 @@
 		</div>
 	</md-toolbar >
 	<md-content in-view-container>
-		<div in-view="$inview&&checkState('amanda', $inviewpart)" id="amanda" scroll-position class="page-container landing-image">
+		<div in-view="$inview&&checkState('amanda', $inviewpart)" margin-top id="amanda" scroll-position class="page-container landing-image">
 			<div layout="column" class="full-page" flex layout-align="center center">
 				<div class="full-width" layout="row">
 					<div class="landing-msg" centered flex-offset="10" flex="50">
@@ -284,7 +288,7 @@
 				<div layout="row" centered layout-align="space-around center" flex-offset="10" flex="80" class="volunteering">
 					<div flex ng-click="openDialog($event, stories.ahuva)">
 						<img class="md-whiteframe-2dp expand-card" src="images/ahuva.jpg">
-						<h3>Ahuva</h3>
+						<h3>Good Shepherd</h3>
 					</div>
 					<div flex ng-click="openDialog($event, stories.nyc)">
 						<img class="md-whiteframe-2dp expand-card" src="images/nyc.jpg">	
