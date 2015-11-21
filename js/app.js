@@ -8,6 +8,25 @@ app.config(['$mdThemingProvider', '$routeProvider', function ($mdThemingProvider
         
 }])
 
+app.run(['$window', function($window) {
+        $window.onload = function() {
+                console.log("window has been loaded");
+                skrollr.init();
+                app.directive('skrollr', function () {
+                        var obj = {
+                                link: function () {
+                                        /* jshint ignore:start */
+                                        console.log(skrollr);
+                                        console.log("Done refreshing skrollr");
+                                        skrollr.init().refresh();
+                                        /* jshint ignore:end */
+                                }
+                        };
+                        return obj;
+                });
+        };
+}])
+
 app.controller('indexCtrl', ['$scope', '$mdDialog', '$route','$timeout', '$document', '$sce', function($scope, $mdDialog, $route, $timeout, $document, $sce){
         // $scope.test = 'test';
 
@@ -136,17 +155,3 @@ app.directive('scrollPosition', [function () {
                 }
         };
 }])
-
-app.directive('skrollr', function () {
-
-        var obj = {
-                link: function () {
-                        /* jshint ignore:start */
-                        console.log(skrollr);
-                        console.log("Done refreshing skrollr");
-                        skrollr.init().refresh();
-                        /* jshint ignore:end */
-                }
-        };
-        return obj;
-});
