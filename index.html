@@ -169,6 +169,10 @@
 			min-width: 100%;
 			border-radius: 50%;
 		}
+
+		.quotes{
+			font-size: 20px;
+		}
 	</style>
 </head>
 <body ng-app="atjy" ng-controller="indexCtrl">
@@ -238,21 +242,6 @@
 						<p>I aspire to be someone that is able to transform the lives of others because I believe that there is so much more to life than just living for myself!</p>
 					</div>
 				</div>
-				<!-- <div layout="row">
-					<div flex-offset="5" flex="55" layout="column" layout-align="start start">
-						<h3>Institute</h3>
-						<p>I am currently enrolled in Ngee Ann Polytechnic, Diploma in Business & Social Enterprise - a course that allows me to study what I love.</p>
-
-						<h3>Community work</h3>
-						<p>Apart from school, I also do volunteer work to give back to the community in my own little ways, which has also developed my ability to communicate with others effectively.</p>
-
-						<h3>Working Experience</h3>
-						<p>I am also currently working on a project where I help companies to design their system manuals, allowing me to hone my I.T. & Design skills - something that is out of my discipline.</p>
-
-						<h3>Aspirations</h3>
-						<p>I aspire to be someone that is able to transform the lives of others because I believe that there is so much more to life than just living for myself!</p>
-					</div>
-				</div> -->
 			</div>
 		</div>
 
@@ -270,7 +259,7 @@
 					</div>
 				</div> -->
 				<div>
-					<md-card flex-offset="25" flex="50" flex-offset="30" flex="40" class="expand-card" ng-click="openDialog($event, stories.scholarship)">
+					<md-card flex-offset="30" flex="40"class="expand-card" ng-click="openDialog($event, stories.scholarship)">
 						<md-card-content centered>
 							<img class="md-card-image scholarship-pic" src="images/Scholarship-2015-2.jpg">
 							<h3>Ngee Ann Polytechnic Scholarship for Academic Year 14/15 & 15/16</h3>
@@ -283,6 +272,10 @@
 					<span class="line-art"></span>
 					<h2>VOLUNTEERING EXPERIENCE</h2>
 					<span class="line-art"></span>
+				</div>
+
+				<div layout="row" layout-align="center center">
+					<i class="quotes">“Not all of us can do great things. But we can do small things with great love.” -Mother Teresa</i>
 				</div>
 
 				<div layout="row" centered layout-align="space-around center" flex-offset="10" flex="80" class="volunteering">
@@ -313,13 +306,13 @@
 		</div>
 
 		<div in-view="$inview&&checkState('socialCauses', $inviewpart)" id="socialCauses" scroll-position class="page-container">
-			<div class="full-page">
+			<div class="full-page page">
 				Social Causes
 			</div>
 		</div>
 
 		<div in-view="$inview&&checkState('contact', $inviewpart)" id="contact" scroll-position class="page-container">
-			<div class="full-page">
+			<div class="full-page page">
 				Contact
 			</div>
 		</div>
