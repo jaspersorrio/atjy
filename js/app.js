@@ -42,47 +42,40 @@ app.controller('indexCtrl', ['$scope', '$mdDialog', '$route','$timeout', '$docum
         };
 
 
-        $scope.$on('$locationChangeStart', function(next, current) { 
-                        // console.log(current);
-                        if(current === undefined){
-                                return;
+        
+
+
+        $timeout(function(){
+                $scope.$on('$locationChangeStart', function(next, current) { 
+                                // console.log(current);
+                                if(current === undefined){
+                                        return;
+                                }
+                                var route = current.split('#/')[1];
+                                $scope.routeTo(route);
+                });
+                
+                $scope.routeTo = function(route){
+                        // scaling doesn't only happen in x position, 
+                        // it happens in both x and y position 
+                        var elem = angular.element(document.getElementById(route))[0];
+                        var attrElem = elem.attributes;
+                        var heightElem = elem.offsetHeight;
+                        console.log(route);
+                        for(var i = 0; i < attrElem.length; i++){
+                                if(attrElem[i].nodeName == 'scroll-position'){
+                                        console.log(attrElem[i].nodeValue);
+                                        // - (heightElem * 0.15) + 32
+                                        var pos = Number(attrElem[i].nodeValue) ;
+                                        $document.scrollTop(pos, 300).then(function() {
+                                                console && console.log('You just scrolled to the top!');
+                                        });
+                                }
                         }
-                        var route = current.split('#/')[1];
-                        $scope.routeTo(route);
-        });
 
-
-
-        $scope.routeTo = function(route){
-//                 var aboutAttr = angular.element(document.getElementById('about'))[0].attributes
-//                 console.log(angular.element(document.getElementById('about')));
-//                 for(var i = 0; i < aboutAttr.length; i++){
-//                         if(aboutAttr[i].nodeName == 'scroll-position'){
-//                                 var margin = (aboutAttr[i].nodeValue * 0.15);
-//                         }
-//                 }
-
-// offsetHeight
-
-                // scaling doesn't only happen in x position, 
-                // it happens in both x and y position 
-                var elem = angular.element(document.getElementById(route))[0];
-                var attrElem = elem.attributes;
-                var heightElem = elem.offsetHeight;
-                console.log(route);
-                for(var i = 0; i < attrElem.length; i++){
-                        if(attrElem[i].nodeName == 'scroll-position'){
-                                console.log(attrElem[i].nodeValue);
-                                // - (heightElem * 0.15) + 32
-                                var pos = Number(attrElem[i].nodeValue) ;
-                                $document.scrollTop(pos, 300).then(function() {
-                                        console && console.log('You just scrolled to the top!');
-                                });
-                        }
+                        $scope.state = route;
                 }
-
-                $scope.state = route;
-        }
+        },500);
 
         $scope.openDialog = function($event, story){
                 var newStory = angular.copy(story);
@@ -147,13 +140,15 @@ app.controller('indexCtrl', ['$scope', '$mdDialog', '$route','$timeout', '$docum
 
 }]);
 
-app.directive('scrollPosition', [function () {
+app.directive('scrollPosition', ['$timeout',function ($timeout) {
         return {
                 restrict: 'A',
                 link: function (scope, iElement, iAttrs) {
+                        $timeout(function(){
                                 iElement.removeAttr('scroll-position');
                                 console.log(iElement[0].offsetTop);
                                 iElement.attr('scroll-position', iElement[0].offsetTop);
+                        },500)
                 }
         };
 }])
