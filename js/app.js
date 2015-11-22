@@ -152,6 +152,7 @@ app.directive('scrollPosition', [function () {
                 restrict: 'A',
                 link: function (scope, iElement, iAttrs) {
                                 iElement.removeAttr('scroll-position');
+                                console.log(iElement[0].offsetTop);
                                 iElement.attr('scroll-position', iElement[0].offsetTop);
                 }
         };
