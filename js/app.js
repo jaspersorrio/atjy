@@ -11,6 +11,7 @@ app.config(['$mdThemingProvider', '$routeProvider', function ($mdThemingProvider
 app.run(['$window', function($window) {
         $window.onload = function() {
                 console.log("window has been loaded");
+
                 skrollr.init();
                 app.directive('skrollr', function () {
                         var obj = {
@@ -24,6 +25,16 @@ app.run(['$window', function($window) {
                         };
                         return obj;
                 });
+
+                 app.directive('scrollPosition', [function () {
+                        return {
+                                restrict: 'A',
+                                link: function (scope, iElement, iAttrs) {
+                                                iElement.removeAttr('scroll-position');
+                                                iElement.attr('scroll-position', iElement[0].offsetTop);
+                                }
+                        };
+                }])
         };
 }])
 
@@ -146,13 +157,3 @@ app.controller('indexCtrl', ['$scope', '$mdDialog', '$route','$timeout', '$docum
         }
 
 }]);
-
-app.directive('scrollPosition', [function () {
-        return {
-                restrict: 'A',
-                link: function (scope, iElement, iAttrs) {
-                                iElement.removeAttr('scroll-position');
-                                iElement.attr('scroll-position', iElement[0].offsetTop);
-                }
-        };
-}])
