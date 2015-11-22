@@ -143,8 +143,8 @@
 
 		.portrait{
 			width: 100%;
-			border: 20px solid white;
-			border-bottom: 100px solid white;
+			padding: 20px ;
+			padding-bottom: 100px ;
 			margin-bottom: 20px; 
 		}
 
@@ -188,6 +188,7 @@
 
 		.volunteering div {
 			padding: 20px;
+			width: 100%;
 		}
 
 		.volunteering div img{
@@ -236,13 +237,24 @@
 			background-image: url('/images/yep4.jpg');
 		}
 
+		.volunteering div {
+			padding: 20px;
+			width: 100%;
+		}
+
+		.volunteering div img{
+			max-width: 100%;
+			min-width: 100%;
+			border-radius: 50%;
+		}
+
 		.org-supported div {
 			padding: 40px;
 		}
 
 		.org-supported div img{
-			max-width: 350px;
-			min-width: 350px;
+			max-width: 100%;
+			min-width: 100%;
 			border-radius: 50%;
 		}
 
@@ -301,9 +313,9 @@
 					<h2>WHO AM I?</h2>
 					<span class="line-art"></span>
 				</div>
-				<div layout-gt-md="row" flex-gt-md="100" flex="80" flex-offset="5" layout="column" >
+				<div layout-gt-md="row" flex-gt-md="100" flex="90" flex-offset="5" layout="column" >
 					<div flex-offset-gt-md="10" flex-gt-md="30" layout="column">
-						<img class="portrait md-whiteframe-4dp" src="images/portrait.jpg">
+						<img flex-sm flex-md class="portrait md-whiteframe-4dp" src="images/portrait.jpg">
 						<!-- <img class="portrait md-whiteframe-4dp" src="images/portrait.jpg"> -->
 					</div>
 					<div flex-offset-gt-md="10" flex-gt-md="40" layout="column" layout-align="start start">
@@ -313,15 +325,15 @@
 
 						<p>I am also a very <strong>driven</strong> person. I believe that nothing is impossible, and I will work towards whatever goals that I set out to accomplish</p>
 						
-						<p>However, no matter how far I go in life, <strong>humility</strong> will always be a value that I hold closely to my heart. I believe that everyone we meet has something to teach us.</p>
+						<p>However, no matter how far I go in life, <strong>humility</strong> will always be a value that I hold closely to my heart. I believe that everyone we meet has something valuable to teach us.</p>
 
 						<p>Much more than that, it is also because of my <strong>faith</strong>. I believe that I am able to stand where I am today is not because of my own abilities, but because of <strong>God’s unending grace and love</strong> towards me.</p>
 
 						<p>I am currently enrolled in Ngee Ann Polytechnic, Diploma in Business & Social Enterprise - a course that allows me to study what I love.</p>
 
-						<p>Apart from school, I have also tried various part-time jobs ranging from the the Retail Industry to Food & Beverage Industry. All these job experiences has certainly help me to develop my <strong>Customer Service Skills</strong> , something which is very essential in the working world!</p>
+						<p>Apart from school, I have also tried various part-time jobs ranging from the the Retail Industry to Food & Beverage Industry. All these job experiences has certainly helped me to develop my <strong>Customer Service Skills</strong> , something which is very essential in the working world!</p>
 
-						<p>I am also currently working on a project where I help companies to design user manuals for their system using Adobe Photoshop. This project has certainly help to develop my <strong>I.T. & Design skills</strong>, which I believe will be very useful in this technological world.</p>
+						<p>I am also currently working on a project where I help companies to design user manuals for their system using Adobe Photoshop. This project has also helped to develop my <strong>I.T. & Design skills</strong>, which I believe will be very useful in this technological world.</p>
 
 						<p>I aspire to be someone that is able to <strong>transform the lives of others</strong> because I believe that there is so much more to life than just living for myself!</p>
 					</div>
@@ -343,7 +355,7 @@
 					</div>
 				</div> -->
 				<div>
-					<md-card flex-offset="30" flex="40"class="expand-card" ng-click="openDialog($event, stories.scholarship)">
+					<md-card flex-offset-gt-md="30" flex-gt-md="40" flex="80" flex-offset="10" class="expand-card" ng-click="openDialog($event, stories.scholarship)">
 						<md-card-content centered>
 							<img class="md-card-image scholarship-pic" src="images/Scholarship-2015-2.jpg">
 							<h3>Ngee Ann Polytechnic Scholarship for Academic Year 14/15 & 15/16</h3>
@@ -358,25 +370,25 @@
 					<span class="line-art"></span>
 				</div>
 
-				<div layout="row" layout-align="center center">
-					<i class="quotes">“Not all of us can do great things. But we can do small things with great love.” -Mother Teresa</i>
+				<div layout="row" flex-offset="10" flex="80" layout-align="center center">
+					<i class="quotes">“Not all of us can do great things. But we can do small things with great love.” -<span class="primary">Mother Teresa</span></i>
 				</div>
 
-				<div layout="row" centered layout-align="space-around center" flex-offset="10" flex="80" class="volunteering">
-					<div flex ng-click="openDialog($event, stories.ahuva)">
-						<img class="md-whiteframe-2dp expand-card" src="images/ahuva.jpg">
+				<div layout="column" layout-gt-md="row" centered layout-align="space-around center" flex-offset="10" flex="80" class="volunteering">
+					<div flex-gt-md ng-click="openDialog($event, stories.ahuva)">
+						<img flex class="md-whiteframe-2dp expand-card" src="images/ahuva.jpg">
 						<h3>Good Shepherd</h3>
 					</div>
-					<div flex ng-click="openDialog($event, stories.nyc)">
-						<img class="md-whiteframe-2dp expand-card" src="images/nyc.jpg">	
+					<div flex-gt-md ng-click="openDialog($event, stories.nyc)">
+						<img flex class="md-whiteframe-2dp expand-card" src="images/nyc.jpg">	
 						<h3>NYC</h3>
 					</div>
-					<div flex ng-click="openDialog($event, stories.runForFood)">
-						<img class="md-whiteframe-2dp expand-card" src="images/runforfood.jpg">	
+					<div flex-gt-md ng-click="openDialog($event, stories.runForFood)">
+						<img flex class="md-whiteframe-2dp expand-card" src="images/runforfood.jpg">	
 						<h3>Run for food</h3>
 					</div>
-					<div flex ng-click="openDialog($event, stories.stag)">
-						<img class="md-whiteframe-2dp expand-card" src="images/stagTuition.jpg">	
+					<div flex-gt-md ng-click="openDialog($event, stories.stag)">
+						<img flex class="md-whiteframe-2dp expand-card" src="images/stagTuition.jpg">	
 						<h3>Stagmatch</h3>
 					</div>
 				</div>
@@ -467,14 +479,19 @@
 					<span class="line-art"></span>
 				</div>
 
-				<div layout="row" centered layout-align="space-around center" flex="80" class="org-supported">
-					<div flex>
+				<div 
+				layout-gt-md="row" 
+				layout="column" 
+				centered
+				layout-align="space-around center" 
+				class="org-supported">
+					<div flex-gt-md>
 						<a href="http://www.worldvision.org.sg/" target="_blank">
 							<img class="md-whiteframe-2dp expand-card" src="images/wvsg.jpg">
 							<h3>World Vision</h3>
 						</a>
 					</div>
-					<div flex>
+					<div flex-gt-md>
 						<a href="http://www.kiva.org/" target="_blank">
 							<img class="md-whiteframe-2dp expand-card" src="images/kiva.jpg">	
 							<h3>Kiva</h3>
