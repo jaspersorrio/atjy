@@ -33,7 +33,6 @@
 
 	body{
 		height: 100% !important;
-		overflow-y:scroll !important;
 	}
 
 		.atjy{
@@ -283,7 +282,7 @@
 			<md-button md-no-ink href="#/team">Contact Me</md-button> -->
 		</div>
 	</md-toolbar >
-	<md-content in-view-container>
+	<md-content in-view-container id="skrollr-body">
 		<div in-view="$inview&&checkState('amanda', $inviewpart)" margin-top id="amanda" scroll-position class="page-container landing-image">
 			<div layout="column" class="full-page" flex layout-align="center center">
 				<div class="full-width" layout="row">
@@ -302,12 +301,12 @@
 					<h2>WHO AM I?</h2>
 					<span class="line-art"></span>
 				</div>
-				<div layout="row">
-					<div flex-offset="10" flex="30" layout="column">
+				<div layout-gt-md="row" flex-gt-md="100" flex="80" flex-offset="5" layout="column" >
+					<div flex-offset-gt-md="10" flex-gt-md="30" layout="column">
 						<img class="portrait md-whiteframe-4dp" src="images/portrait.jpg">
 						<!-- <img class="portrait md-whiteframe-4dp" src="images/portrait.jpg"> -->
 					</div>
-					<div flex-offset="10" flex="40" layout="column" layout-align="start start">
+					<div flex-offset-gt-md="10" flex-gt-md="40" layout="column" layout-align="start start">
 						<h3 class="primary">Selfless. Visionary. Driven. Communicative.</h3>
 						<p>I am Amanda Tan, an eighteen-year-old girl.</p>
 						<p>Being able to <strong>bless others</strong> has always been a joy to me. I enjoy the presence of people around me and love interacting with others.</p>
@@ -334,7 +333,7 @@
 			<div class="page">
 				<div layout="row" layout-align="center center">
 					<span class="line-art"></span>
-					<h2>AWARDS & ACHIEVEMENTS</h2>
+					<h2 class="centered">AWARDS & ACHIEVEMENTS</h2>
 					<span class="line-art"></span>
 				</div>
 
@@ -418,10 +417,10 @@
 					skrollr 
 					style="margin-top:20%;"
 					data-bottom-center="transform: translate(100%, 0px); opacity:0;"
-					data-bottom="transform: translate(45%, 0px); opacity:1;"
+					data-bottom="transform: translate(40%, 0px); opacity:1;"
 					data-center-center="transform: translate(35%, 0px); opacity:1;"
-					data-top="transform: translate(-100%, 0px); opacity:0;">
-						<md-card  flex="45">
+					data-top="transform: translate(0%, 0px); opacity:0;">
+						<md-card  flex-gt-md="45" flex-sm="55" flex-md="55" >
 							<md-card-content>
 								<p>In the past, I still remember how I would often complain about the life I had in Singapore. But as I saw the situation that the kids in Chiang Mai were facing, I began to realise how blessed I actually am to be able to live in such a wonderful country with a comfortable life. 
 								</p>

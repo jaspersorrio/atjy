@@ -7,8 +7,14 @@
 	.modal-card{
 		margin: 0px;
 	}
+
+	md-card-content{
+		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+
 </style>
-<md-dialog flex="40" flex-gt-md="30" class="atjy-modal">
+<md-dialog flex="80" flex-gt-md="30" class="atjy-modal">
 	<md-dialog-content>
 		<md-card class="modal-card">
 			<img class="md-card-image" ng-src="{{story.img}}">

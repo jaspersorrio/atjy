@@ -93,6 +93,7 @@ app.controller('indexCtrl', ['$scope', '$mdDialog', '$route','$timeout', '$docum
                         escapeToClose: true,
                         parent: parentEl,
                         targetEvent: $event,
+                        disableParentScroll: true,
                         controller: ["$scope",function($scope){
                                 $scope.story = newStory;
                         }],
